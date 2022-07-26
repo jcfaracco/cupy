@@ -565,7 +565,9 @@ from cupy._math.trigonometric import rad2deg  # NOQA
 from cupy._math.trigonometric import radians  # NOQA
 from cupy._math.trigonometric import sin  # NOQA
 from cupy._math.trigonometric import tan  # NOQA
+from cupy._math.trigonometric import angle  # NOQA
 from cupy._math.trigonometric import unwrap  # NOQA
+
 
 from cupy._math.hyperbolic import arccosh  # NOQA
 from cupy._math.hyperbolic import arcsinh  # NOQA
@@ -642,7 +644,6 @@ from cupy._math.arithmetic import remainder as mod  # NOQA
 from cupy._math.arithmetic import subtract  # NOQA
 from cupy._math.arithmetic import true_divide  # NOQA
 
-from cupy._math.arithmetic import angle  # NOQA
 from cupy._math.arithmetic import conjugate as conj  # NOQA
 from cupy._math.arithmetic import conjugate  # NOQA
 from cupy._math.arithmetic import imag  # NOQA

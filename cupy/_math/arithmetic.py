@@ -30,9 +30,6 @@ negative = _core.negative
 conjugate = _core.conjugate
 
 
-angle = _core.angle
-
-
 # cupy.real is not a ufunc because it returns a view.
 # The ufunc implementation is used by fusion.
 _real_ufunc = _core.create_ufunc(

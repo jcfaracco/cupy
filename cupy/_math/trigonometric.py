@@ -103,6 +103,34 @@ rad2deg = _core.create_ufunc(
     ''')
 
 
+def angle(z, deg=False):
+    r"""Return the angle of the complex argument.
+
+    Args:
+        z (cupy.ndarray): A complex number or sequence of complex numbers.
+        deg (bool): Return angle in degrees if True, radians if False
+            (default).
+    Returns:
+        cupy.ndarray or scalar: The counterclockwise angle from the positive
+            real axis on the complex plane in the range ``(-pi, pi]``, with
+            dtype as numpy.float64.
+
+    .. seealso:: :func:`numpy.angle`
+    """
+    z = cupy.asanyarray(z)
+    if issubclass(z.dtype.type, cupy.complexfloating):
+        zimag = z.imag
+        zreal = z.real
+    else:
+        zimag = 0
+        zreal = z
+
+    a = arctan2(zimag, zreal)
+    if deg:
+        a *= 180/numpy.pi
+    return a
+
+
 def unwrap(p, discont=None, axis=-1, *, period=2*numpy.pi):
     r"""Unwrap by taking the complement of large deltas w.r.t. the period.
 
